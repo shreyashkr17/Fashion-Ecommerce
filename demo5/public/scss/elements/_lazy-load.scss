@@ -1,0 +1,87 @@
+.lazy-load-image-background {
+    position: relative;
+    width: 100%;
+    z-index: -1;
+
+    img {
+        width: 100%;
+    }
+
+    &.product-image {
+        position: static;
+        display: block !important;
+    }
+
+    &.product-image-hover {
+        display: block !important;
+        position: absolute;
+    }
+
+    span {
+        display: block !important;
+    }
+}
+
+.lazy-load-image-background.lazy-load-image-loaded {
+    display: inline !important;
+    z-index: 2;
+}
+
+
+.lazy-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #f4f4f4;
+
+    &.bg-2 {
+        background: #b0c4de;
+    }
+
+    &.bg-3 {
+        background: #add8e6;
+    }
+
+    &.bg-4 {
+        background: #008b8b;
+    }
+}
+
+.lazy-media {
+    position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+        width: 100%;
+        background-color: #f4f4f4;
+    }
+
+    .lazy-load-image-background {
+        position: static;
+        display: inline !important;
+    }
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: all .3s;
+        object-fit: cover;
+    }
+
+    > figure {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}

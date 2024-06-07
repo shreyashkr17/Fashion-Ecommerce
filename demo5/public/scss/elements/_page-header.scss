@@ -1,0 +1,75 @@
+/* Page Header */
+.page-header {
+	padding: 4.6rem 0 5rem;
+	background-color: #ebebeb;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+
+	h1 {
+		color: $headings-text;
+		font: normal 400 3.8rem/1.1 $font-family;
+		letter-spacing: -.025em;
+		margin-bottom: 0;
+
+
+		span {
+			display: block;
+			color: $primary-color;
+			font-size: 1.6rem;
+			margin-top: .8rem;
+		}
+	}
+
+	&.page-header-big {
+		display: flex;
+		position: relative;
+		min-height: 250px;
+		margin-bottom: 5rem;
+
+		h1 {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			span {
+				font-size: 1.6rem;
+				margin-top: .4rem;
+				letter-spacing: 0;
+			}
+		}
+	}
+}
+
+
+@include mq('md') {
+	.page-header {
+		h1 {
+			font-size: 3.6rem;
+
+			span {
+				font-size: 1.8rem;
+			}
+		}
+
+		&.page-header-big {
+			min-height: 350px;
+		}
+	}
+}
+
+@include mq('lg') {
+	.page-header {
+		h1 {
+			font-size: 4rem;
+
+			span {
+				font-size: 2rem;
+			}
+		}
+
+		&.page-header-big {
+			min-height: 450px;
+		}
+	}
+}

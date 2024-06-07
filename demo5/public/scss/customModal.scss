@@ -1,0 +1,216 @@
+.CustomModal{
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    position: absolute;
+    top:10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.innerCustomModal{
+    width: 80%;
+    height: 75%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 100;
+    padding: 10px;
+    border: 3px solid black;
+}
+.headerCustom{
+    width: 100%;
+    height: auto;
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+
+    p{
+        width: 95%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+    }
+}
+.headerCustom1{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.innerInputDet{
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin: 10px 0;
+}
+.leftInputLabel{
+    width: 30%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    label{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+
+        p{
+            font-size: 1.5rem;
+        }
+    }
+}
+.rightInputLabel{
+    width: 70%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+    input{
+        border-radius: 5px;
+        padding: 3px;
+    }
+    input::placeholder{
+        font-size: 1.2rem;
+        font-family: 'Gotham Medium', sans-serif;
+    }
+    textarea{
+        border-radius: 5px;
+        padding: 3px;
+    }
+    textarea::placeholder{
+        font-size: 1.2rem;
+        font-family: 'Gotham Medium', sans-serif;
+    }
+}
+
+.NoteRemark{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    p{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.MoveToCartDiv{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.MoveToCartDiv1{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // margin-top: 10px;
+}
+.details-filter-row{
+    .select{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+        span{
+            margin: 3px 0;
+        }
+    }
+}
+
+
+@media (min-width:1500px){
+    .CustomModal{
+        top: 10%;
+    }
+}
+
+@media (max-width:1100px) {
+    .headerCustom{
+        p{
+            font-size: 1.5rem;
+        }
+    }
+
+    .leftInputLabel{
+        label{
+            p{
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    .NoteRemark{
+        p{
+            font-size: 1.3rem;
+        }
+    }
+    .MoveToCartDiv1{
+        div{
+            i{
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width:500px) {
+    .innerCustomModal{
+        width: 90%;
+    }
+    .NoteRemark{
+        p{
+            font-size: 1.1rem;
+        }
+    }
+    .MoveToCartDiv1{
+        div{
+            i{
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+
+@media (max-width:400px) {
+    .innerInputDet{
+        flex-direction: column;
+        .leftInputLabel{
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .rightInputLabel{
+            width: 100%;
+        }
+    }
+    .alignBtnCenter{
+        align-items: center;
+    }
+}

@@ -1,0 +1,9 @@
+.brand-carousel:not(.brand-border) .owl-item {
+    display: flex;
+    justify-content: center;
+}
+
+.brands-border .owl-item {
+    display: block !important;
+    justify-content: initial !important;
+}

@@ -1,0 +1,72 @@
+body {
+    overflow-y: scroll !important;
+    
+    &.loaded {
+        overflow: auto !important;
+        overflow-x: hidden !important;
+
+        .loading-overlay {
+            display: none !important;
+        }
+    }
+}
+
+#root {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s cubic-bezier(0, 0, 0.5, 1);
+    
+    &.loaded {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.loading-overlay {
+    position: fixed;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all .5s ease-in-out;
+    background: #fff;
+    opacity: 1;
+    visibility: visible;
+    z-index: 10000;
+}
+
+.bounce-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    margin: -9px 0 0 -35px;
+    transition: all .2s;
+    text-align: center;
+    z-index: 10000;
+
+    &::selection {
+        background: transparent;
+    }
+
+    .bounce1,
+    .bounce2,
+    .bounce3 {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        border-radius: 100%;
+        background-color: #CCC;
+        box-shadow: 0 0 20px 0 rgba(0,0,0,0.15);
+        animation: 1.4s ease-in-out 0s normal both infinite bouncedelay
+    }
+
+    .bounce1 {
+        animation-delay: -.32s;
+    }
+
+    .bounce2 {
+        animation-delay: -.16s;
+    }
+}

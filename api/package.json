@@ -1,0 +1,36 @@
+{
+    "name": "molla-api",
+    "version": "1.0.1",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "start": "nodemon — experimental-modules server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": ""
+    },
+    "homepage": "",
+    "dependencies": {
+        "apollo-link-http": "^1.5.17",
+        "apollo-server": "^3.4.0",
+        "apollo-server-core": "^3.4.0",
+        "apollo-server-express": "^3.4.0",
+        "body-parser": "^1.19.0",
+        "class-transformer": "^0.4.0",
+        "easygraphql-format-error": "^0.0.3",
+        "express": "^4.17.1",
+        "express-graphql": "^0.12.0",
+        "fuse.js": "^6.4.6",
+        "graphql": "^15.6.1",
+        "graphql-tools": "^8.2.0",
+        "graphql-yoga": "^1.18.3",
+        "lodash": "^4.17.21",
+        "nodemon": "^2.0.4"
+    }
+}

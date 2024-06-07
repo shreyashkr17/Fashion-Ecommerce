@@ -1,0 +1,196 @@
+/*
+ * 	Full theme - index-3, index-4 etc... Owl Carousel CSS File
+ */
+@import '../../config/variables';
+
+//nav
+$nav-full-width:				30px !default;
+$nav-full-height:			100% !default;
+$nav-full-color: 			$primary-color !default;
+$nav-full-color-hover:		$primary-color !default;
+$nav-full-font-size: 		20px !default;
+$nav-full-rounded: 			0 !default;
+$nav-full-background: 		rgba(255, 255, 255, .75) !default;
+$nav-full-background-hover:	rgba(255, 255, 255, 1) !default;
+$nav-full-disabled-opacity: 	0 !default;
+
+//dots
+$dot-full-width:				8px !default;
+$dot-full-active-width: 		18px !default;
+$dot-full-height:			8px !default;
+$dot-full-rounded:			30px !default;
+$dot-full-margin: 			5px 6px !default;
+$dot-full-border:			$primary-color !default;
+$dot-full-background:		transparent !default;
+$dot-full-border-active:		$primary-color !default;
+$dot-full-background-active:	$primary-color !default;
+
+.owl-full {
+	// Styling Next and Prev buttons
+	.owl-nav {
+		margin-top: 0;
+		text-align: center;
+		-webkit-tap-highlight-color: transparent;
+
+		[class*='owl-'] {
+			position: absolute;
+			top: 0;
+			z-index: 99;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: $nav-full-width;
+			height: $nav-full-height;
+			margin: 0;
+			color: $nav-full-color;
+			font-size: $nav-full-font-size;
+			line-height: 1;
+			padding: 0;
+			text-align: center;
+			border: none;
+			background: $nav-full-background;
+			cursor: pointer;
+			border-radius: $nav-full-rounded;
+			transition: all 0.3s ease;
+
+			i {
+				margin-top: .1rem;
+			}
+
+			&:hover,
+			&:focus {
+				color:$nav-full-color-hover;
+				background: $nav-full-background-hover;
+				text-decoration: none;
+				outline: none !important;
+			}
+
+			&:before {
+				content: '';
+				display: block;
+				width: 10px;
+				height: 100%;
+				position: absolute;
+				left: 100%;
+				top: 0;
+				border-radius: 20px 0 0 20px;
+				background-size: contain;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-image: url('../../../images/nav-prev-shadow.png');
+			}
+		}
+		.disabled {
+			opacity: $nav-full-disabled-opacity;
+			pointer-events: none;
+			cursor: default;
+		}
+
+		.owl-prev {
+			left: 0;
+		}
+
+		.owl-next {
+			right: 0;
+
+			&:before {
+				left: auto;
+				right: 100%;
+				background-image: url('../../../images/nav-next-shadow.png');
+			}
+		}
+	}
+
+	&.carousel-with-shadow {
+		.owl-stage-outer {
+			padding-left: 0;
+			padding-right: 0;
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		.owl-nav {
+			[class*='owl-'] {
+				height: calc( 100% - 20px );
+			}
+		}
+
+		.owl-prev, .owl-next {
+			top: 1.5rem;
+		}
+	}
+
+	// Styling dots
+	.owl-nav.disabled + .owl-dots {
+		margin-top: 0;
+	}
+
+	.owl-dots {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -4rem;
+		line-height: 0;
+		text-align: center;
+		-webkit-tap-highlight-color: transparent;
+
+		.owl-dot {
+			display: inline-block;
+			zoom: 1;
+			*display: inline;
+
+			span {
+				width: $dot-full-width;
+				height: $dot-full-height;
+				margin: $dot-full-margin;
+				border: .1rem solid $dot-full-border;
+				background: $dot-full-background;
+				display: block;
+				-webkit-backface-visibility: visible;
+				transition: all .3s ease;
+				border-radius: $dot-full-rounded;
+			}
+
+			&:hover {
+				span {
+					border-color: $dot-full-border-active;
+					background: $dot-full-background-active;
+				}
+			}
+
+			&.active {
+				span {
+					width: $dot-full-active-width;
+					border-color: $dot-full-border-active;
+					background: $dot-full-background-active;
+				}
+			}
+		}
+	}
+
+
+	&.owl-nav-dark {
+		.owl-nav {
+			[class*='owl-'] {
+				color: #333;
+
+				&:hover,
+				&:focus {
+					color:$nav-full-color-hover;
+					background: $nav-full-background-hover;
+				}
+			}
+		}
+	}
+
+	.bg-light & {
+		.owl-nav {
+			[class*='owl-'] {
+				&:hover,
+				&:focus {
+					background: #f8f8f8;
+				}
+			}
+		}
+	}
+}

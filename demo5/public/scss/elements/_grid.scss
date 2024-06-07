@@ -1,0 +1,10 @@
+.masonry {
+    display: flex;
+    width: auto;
+}
+
+.masonry-column {
+    > * {
+        width: 100%;
+    }
+}

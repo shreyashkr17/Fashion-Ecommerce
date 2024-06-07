@@ -1,0 +1,205 @@
+/*
+ * 	Simple theme - Owl Carousel CSS File
+ */
+@use "sass:math";
+@import '../../config/variables';
+
+//nav
+$nav-simple-width:				42px !default;
+$nav-simple-height:				42px !default;
+$nav-simple-color: 				#ccc !default;
+$nav-simple-color-hover:		$primary-color !default;
+$nav-simple-font-size: 			30px !default;
+$nav-simple-rounded: 			50px !default;
+$nav-simple-background: 		transparent !default;
+$nav-simple-background-hover:	transparent !default;
+$nav-simple-disabled-opacity: 	0.7 !default;
+
+//dots
+
+$dot-simple-width:				8px !default;
+$dot-simple-active-width: 		18px !default;
+$dot-simple-height:			8px !default;
+$dot-simple-rounded:			30px !default;
+$dot-simple-margin: 			5px 6px !default;
+$dot-simple-border:			#d7d7d7 !default;
+$dot-simple-background:		transparent !default;
+$dot-simple-border-active:		#cccccc !default;
+$dot-simple-background-active:	#cccccc !default;
+
+.owl-simple {
+	// Styling Next and Prev buttons
+	.owl-nav {
+		margin-top: 0;
+		text-align: center;
+		-webkit-tap-highlight-color: transparent;
+
+		[class*='owl-'] {
+			position: absolute;
+			top: 50%;
+			z-index: 99;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: $nav-simple-width;
+			height: $nav-simple-height;
+			margin: 0;
+			margin-top: math.div(-$nav-simple-height, 2);
+			color: #999;
+			font-size: $nav-simple-font-size;
+			line-height: 1;
+			padding: 0;
+			border: none;
+			background: $nav-simple-background;
+			cursor: pointer;
+			border-radius: $nav-simple-rounded;
+			transition: all 0.3s ease;
+
+			i {
+				margin-top: .1rem;
+			}
+
+			&:not(.disabled):hover {
+				color:$nav-simple-color-hover;
+				background: $nav-simple-background-hover;
+				text-decoration: none;
+			}
+		}
+		.disabled {
+			opacity: $nav-simple-disabled-opacity;
+			cursor: default;
+		}
+
+		.owl-prev {
+			left: -50px;
+		}
+
+		.owl-next {
+			right: -50px;
+		}
+	}
+
+	// Styling dots
+	.owl-nav.disabled + .owl-dots {
+		margin-top: 10px;
+	}
+
+	.owl-dots {
+		line-height: 0;
+		text-align: center;
+		-webkit-tap-highlight-color: transparent;
+
+		.owl-dot {
+			display: inline-block;
+			zoom: 1;
+			*display: inline;
+
+			span {
+				width: $dot-simple-width;
+				height: $dot-simple-height;
+				margin: $dot-simple-margin;
+				border: .1rem solid $dot-simple-border;
+				background: $dot-simple-background;
+				display: block;
+				-webkit-backface-visibility: visible;
+				transition: all .3s ease;
+				border-radius: $dot-simple-rounded;
+			}
+
+			&:hover {
+				span {
+					border-color: $dot-simple-border-active;
+					background: $dot-simple-background-active;
+				}
+			}
+
+			&.active {
+				span {
+					width: $dot-simple-active-width;
+					border-color: $dot-simple-border-active;
+					background: $dot-simple-background-active;
+				}
+			}
+		}
+	}
+
+	&.owl-light {
+		.owl-nav {
+			[class*='owl-'] {
+				color: #fff;
+			}
+		}
+		.owl-dots {
+			.owl-dot {
+				&:hover {
+					span {
+						border-color: $primary-color;
+						background: $primary-color;
+					}
+				}
+
+				&.active {
+					span {
+						border-color: $primary-color;
+						background: $primary-color;
+					}
+				}
+			}
+		}
+		
+		&.owl-nav-inside {
+			.owl-dots {
+				.owl-dot {
+					&.active {
+						span {
+							border-color: #f8f8f8;
+							background: #f8f8f8;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.owl-dark {
+		.owl-nav {
+			[class*='owl-'] {
+				color: #666666;
+			}
+		}
+		.owl-dots {
+			.owl-dot {
+				span {
+					border-color: #666666;
+				}
+
+				&:hover,
+				&.active {
+					span {
+						border-color: #666666;
+						background: #666666;
+					}
+				}
+			}
+		}
+	}
+
+	&.owl-nav-inside {
+		.owl-nav {
+			.owl-prev {
+				left: 18px;
+			}
+
+			.owl-next {
+				right: 18px;
+			}
+		}
+
+		.owl-dots {
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 25px;
+		}
+	}
+}

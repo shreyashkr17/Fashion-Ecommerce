@@ -1,0 +1,134 @@
+/* Modals */
+.modal-backdrop {
+	background-color: #333;
+
+	&.show {
+		opacity: .4;
+	}
+}
+
+.modal-body {
+	padding: 0;
+
+	.close {
+		position: absolute;
+		right: 1.5rem;
+		top: 1.5rem;
+	}
+}
+
+.modal-content {
+	max-height: 100%;
+	overflow: auto;
+	border: none;
+	box-shadow: 5px 10px 16px rgba(51, 51, 51, .05), -5px 10px 16px rgba(51, 51, 51, .05);
+}
+@font-face {
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/public/fonts/Gotham-Black.ttf') format('opentype');
+  }
+
+.close {
+	font-weight: normal;
+	font-size: 1.8rem;
+	color: $body-text;
+	opacity: 1;
+	transition: all .3s;
+
+	&:hover,
+	&:focus {
+		color: $primary-color;
+	}
+}
+
+.modal-dialog {
+	margin: 1rem;
+}
+
+@include mq('md') {
+	.modal-dialog {
+		max-width: 580px;
+		width: 100%;
+	}
+}
+
+.modal-close {
+	position: absolute;
+	font: normal normal 2.6rem/1 'molla';
+	color: #666;
+    font-size: 1.8rem;
+    top: 1.5rem;
+    right: 2rem;
+    display: block;
+    width: 2rem;
+    height: 2rem;
+}
+
+.ReactModal__Content {
+	display: flex;
+	align-items: center;
+
+	> * {
+		opacity: 0;
+		transition: .3s ease;
+		
+		&.modal-content {
+			transform: translateY(-2rem);
+		}
+	}
+	&.ReactModal__Content--after-open > * {
+		opacity: 1;
+		
+		&.modal-content {
+			transform: translateY(0);
+		}
+	}
+
+}
+#login-modal.ReactModal__Content {
+	height: 96vh;
+}
+
+.ReactModal__Overlay {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+    background-color: rgba(77, 77, 77, 0.6);
+    z-index: 10000;
+	opacity: 0;
+	transition: opacity .3s;
+	
+	&.ReactModal__Overlay--after-open {
+		opacity: 1;
+	}
+}
+
+
+.video-modal {
+	position: relative;
+	top: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 106rem;
+	width: 100%;
+	height: 56.6rem;  
+	
+	iframe {
+		width: 100%;
+		height: 100%;
+		background-color: #eee;
+	}
+
+	.close {
+		position: fixed;
+		top: 1rem;
+		right: 1rem;
+		width: 5rem;
+		height: 5rem;
+		z-index: 1;
+	}
+}

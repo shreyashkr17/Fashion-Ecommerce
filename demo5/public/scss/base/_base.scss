@@ -1,0 +1,173 @@
+// Base
+html {
+	font-size: 62.5%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	font-size-adjust: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0 !important; 
+}
+
+nextjs-portal {
+  display: none;
+}
+
+body {
+  font: normal 300 #{$font-size}/1.86 $font-family;
+  color: $body-text;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  -ms-overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-y: auto;
+}
+
+::-moz-selection {
+  color: #fff;
+  background-color: $primary-color;
+}
+
+::selection {
+  color: #fff;
+  background-color: $primary-color;
+}
+
+p {
+	margin-bottom: 0;
+	font-size: 1.4rem;
+	font-weight: 300;
+	letter-spacing: 0;
+	color: #777;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ebebeb;
+  margin: 3rem auto 2.5rem;
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 70%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -.5em;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+button {
+  -webkit-appearance: none;
+  border: none;
+  background-color: transparent;
+}
+
+.bg-light {
+  background-color: #f8f8f8 !important;
+}
+
+.bg-light-2 {
+  background-color: #f9f9f9 !important;
+}
+
+.bg-lighter {
+  background-color: #fafafa !important;
+}
+
+.bg-gray {
+  background-color: #f4f5f8 !important;
+}
+
+.bg-primary {
+  background-color: $primary-color !important;
+}
+
+.bg-secondary {
+  background-color: $secondary-color !important;
+}
+
+.bg-image {
+  // background-color: ;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+	-webkit-appearance: none
+}
+
+.bg-overlay {
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: .3;
+    background-color: #333;
+  }
+
+  .container,
+  .container-fluid {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+/* Animation for lazyload */
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation for Skeleton Loading */
+@keyframes skeletonloading {
+  to {
+    background-position: 400% 0
+  }
+}

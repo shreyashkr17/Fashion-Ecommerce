@@ -1,0 +1,42 @@
+/* Contact us 2 */
+.contact-box {
+	margin-bottom: 3rem;
+
+	h3 {
+		font-weight: 400;
+		font-size: 1.6rem;
+		letter-spacing: -.025em;
+		margin-bottom: 1.6rem;
+	}
+
+	address,
+	div {
+		font-weight: 300;
+		font-style: normal;
+	}
+
+	a {
+		color: inherit;
+
+		&:hover,
+		&:focus {
+			color: $primary-color;
+		}
+	}
+
+	.social-icons {
+		padding-top: 1.5rem;
+	}
+
+	.social-icon {
+		font-size: 1.3rem;
+	}
+}
+
+.touch-container {
+	.lead {
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
